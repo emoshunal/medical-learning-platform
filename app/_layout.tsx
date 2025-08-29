@@ -1,15 +1,21 @@
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { defaultConfig } from '@tamagui/config/v4';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
+import { createTamagui, TamaguiProvider } from 'tamagui';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { Stack } from 'expo-router';
 
+const config = createTamagui(defaultConfig)
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    'Poppins': require('../assets/fonts/Poppins/Poppins-Regular.ttf'),
+    'Poppins-Bold': require('../assets/fonts/Poppins/Poppins-Bold.ttf'),
+    'Poppins-SemiBold': require('../assets/fonts/Poppins/Poppins-SemiBold.ttf'),
+    'Poppins-Medium': require('../assets/fonts/Poppins/Poppins-Medium.ttf'),
+    'Poppins-Light': require('../assets/fonts/Poppins/Poppins-Light.ttf'),
   });
 
   if (!loaded) {
@@ -18,12 +24,17 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
+    <ThemeProvider  value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+
+      <TamaguiProvider config={config}>
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+
+      </TamaguiProvider>
+
     </ThemeProvider>
   );
 }
+

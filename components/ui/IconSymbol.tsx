@@ -1,7 +1,7 @@
 // Fallback for using MaterialIcons on Android and web.
 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-import { SymbolWeight, SymbolViewProps } from 'expo-symbols';
+import { SymbolViewProps, SymbolWeight } from 'expo-symbols';
 import { ComponentProps } from 'react';
 import { OpaqueColorValue, type StyleProp, type TextStyle } from 'react-native';
 
@@ -18,6 +18,41 @@ const MAPPING = {
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
+  'person.fill': 'person',
+  'gear': 'settings',
+  'star.fill': 'star',
+  'xmark' : 'close',
+  'checkmark' : 'check',
+  'chevron.left': 'chevron-left',
+  'plus': 'add',
+  'minus': 'remove',
+  'trash': 'delete',
+  'pencil': 'edit',
+  'magnifyingglass': 'search',
+  'bell': 'notifications',
+  'heart.fill': 'favorite',
+  'bookmark.fill': 'bookmark',
+  'camera.fill': 'photo-camera',
+  'video.fill': 'video-call',
+  'phone.fill': 'phone',
+  'envelope.fill': 'email',
+  'location.fill': 'location-on',
+  'lock.fill': 'lock',
+  'globe': 'public',
+  'cart.fill': 'shopping-cart',
+  'tag.fill': 'label',
+  'chart.bar.fill': 'bar-chart',
+  'calendar': 'calendar-today',
+  'clock.fill': 'access-time',
+  'cloud.fill': 'cloud',
+  'bubble.left.fill': 'chat',
+  'video': 'videocam',
+  'square.fill': 'square',
+  'circle.fill': 'circle',
+  'triangle.fill': 'change-history',
+  'list.bullet': 'format-list-bulleted',
+  'book.fill': 'book',
+
 } as IconMapping;
 
 /**
