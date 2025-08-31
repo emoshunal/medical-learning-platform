@@ -1,13 +1,11 @@
 import { Button, ScrollView, Text, XStack } from 'tamagui'
+import Header from '../pages/components/header'
 import { HomeCard } from '../pages/home/components/Card'
 import { CardAssessment } from '../pages/home/components/CardAssessment'
-import Header from '../pages/layout/header'
 
 export default function HomeScreen() {
   return (
     <ScrollView>
-
-
       <XStack
         flex={1}
         paddingTop="$10"
@@ -42,6 +40,7 @@ export default function HomeScreen() {
             height={75}
           />
         </XStack>
+      
       </XStack>
     </ScrollView>
 

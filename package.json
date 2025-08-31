@@ -13,12 +13,14 @@
   "dependencies": {
     "@expo-google-fonts/poppins": "^0.4.0",
     "@expo/vector-icons": "^14.1.0",
+    "@gorhom/portal": "^1.0.14",
     "@react-navigation/bottom-tabs": "^7.3.10",
     "@react-navigation/elements": "^2.3.8",
     "@react-navigation/native": "^7.1.6",
     "@tamagui/config": "^1.132.19",
     "@tamagui/linear-gradient": "^1.132.23",
     "@tamagui/lucide-icons": "^1.132.19",
+    "@tamagui/portal": "^1.132.23",
     "@tamagui/stacks": "^1.132.19",
     "@tamagui/tabs": "^1.132.23",
     "@tamagui/text": "^1.132.19",
@@ -45,6 +47,7 @@
     "react-native-screens": "~4.11.1",
     "react-native-web": "~0.20.0",
     "react-native-webview": "13.13.5",
+    "react-native-youtube-iframe": "^2.4.1",
     "tamagui": "^1.132.19"
   },
   "devDependencies": {

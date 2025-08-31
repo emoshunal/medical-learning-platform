@@ -1,7 +1,7 @@
 
 import { Atom, ClipboardPlus, Dna, Fingerprint, FlaskRound, HeartPulse, Pill } from '@tamagui/lucide-icons'
 import { FlatList } from 'react-native'
-import { Card, CardProps, Image, Text, XStack } from 'tamagui'
+import { Card, CardProps, Image, Text, YStack } from 'tamagui'
 
 const color = '#ffffff'
 
@@ -51,11 +51,12 @@ const subjects = [
 ]
 export function CardSubject(props: CardProps) {
     return (
-        <XStack space="$3" width="100%" paddingBottom={30}>
+        <YStack space="$3" width="100%" paddingBottom={30}>
             <FlatList
                 data={subjects}
                 keyExtractor={(item) => item.id}
                 horizontal
+                nestedScrollEnabled={true}
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item }) => (
                     <Card size="$4" {...props}
@@ -84,7 +85,7 @@ export function CardSubject(props: CardProps) {
                     </Card>
                 )}
             />
-        </XStack>
+        </YStack>
 
     )
 }

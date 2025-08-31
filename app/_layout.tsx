@@ -2,7 +2,7 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { defaultConfig } from '@tamagui/config/v4';
 import { useFonts } from 'expo-font';
 import 'react-native-reanimated';
-import { createTamagui, TamaguiProvider } from 'tamagui';
+import { createTamagui, PortalProvider, TamaguiProvider } from 'tamagui';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { Stack } from 'expo-router';
@@ -24,17 +24,20 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider  value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
 
-      <TamaguiProvider config={config}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
 
-      </TamaguiProvider>
+    <TamaguiProvider config={config}>
+      <PortalProvider>
+        <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+          <Stack>
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+        </ThemeProvider>
+      </PortalProvider>
+    </TamaguiProvider>
 
-    </ThemeProvider>
+
   );
 }
 
